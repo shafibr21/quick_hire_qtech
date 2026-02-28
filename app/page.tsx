@@ -12,6 +12,8 @@
 
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
+import BrandsSection from "@/components/sections/BrandsSection";
+import HeroSection from "@/components/sections/HeroSection";
 
 const mockJobs = [
   {
@@ -169,7 +171,8 @@ export default function Home() {
     <>
       <Navbar />
       <main className="pt-16">
-
+        <HeroSection />
+        <BrandsSection />
       </main>
       <Footer />
     </>
