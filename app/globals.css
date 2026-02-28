@@ -26,5 +26,25 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-clash), var(--font-poppins), var(--font-epilogue), Arial, Helvetica, sans-serif;
+  font-family:
+    var(--font-clash), var(--font-poppins), var(--font-epilogue), Arial,
+    Helvetica, sans-serif;
+}
+
+.clip-top-left {
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.clip-bottom-right {
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+.clip-cta {
+  clip-path: polygon(
+    12% 0%,
+    /* bigger top-left cut */ 100% 0%,
+    100% 85%,
+    /* adjust vertical depth */ 88% 100%,
+    /* bigger bottom-right cut */ 0% 100%
+  );
 }

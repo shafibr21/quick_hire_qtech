@@ -1,18 +1,8 @@
-// Mock Data
-// const categories = [
-//   { name: 'Design', count: '235 jobs available', icon: PenTool },
-//   { name: 'Sales', count: '450 jobs available', icon: BarChart3 },
-//   { name: 'Marketing', count: '140 jobs available', icon: MonitorPlay },
-//   { name: 'Finance', count: '325 jobs available', icon: Calculator },
-//   { name: 'Technology', count: '436 jobs available', icon: Code2 },
-//   { name: 'Engineering', count: '542 jobs available', icon: Code2 },
-//   { name: 'Business', count: '211 jobs available', icon: Briefcase },
-//   { name: 'Human Resource', count: '346 jobs available', icon: Users },
-// ];
-
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import BrandsSection from "@/components/sections/BrandsSection";
+import CategorySection from "@/components/sections/CategorySection";
+import CTASection from "@/components/sections/CTASection";
 import HeroSection from "@/components/sections/HeroSection";
 
 const mockJobs = [
@@ -173,6 +163,8 @@ export default function Home() {
       <main className="pt-16">
         <HeroSection />
         <BrandsSection />
+        <CategorySection />
+        <CTASection />
       </main>
       <Footer />
     </>
