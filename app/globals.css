@@ -13,6 +13,7 @@
   --font-poppins: var(--font-poppins);
   --font-redhat: var(--font-redhat);
   --font-epilogue: var(--font-epilogue);
+  --font-clash: var(--font-clash);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,5 +26,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-poppins), var(--font-epilogue), Arial, Helvetica, sans-serif;
+  font-family: var(--font-clash), var(--font-poppins), var(--font-epilogue), Arial, Helvetica, sans-serif;
 }
