@@ -3,7 +3,9 @@ import { Navbar } from "@/components/layout/Navbar";
 import BrandsSection from "@/components/sections/BrandsSection";
 import CategorySection from "@/components/sections/CategorySection";
 import CTASection from "@/components/sections/CTASection";
+import FeaturedSection from "@/components/sections/FeaturedSection";
 import HeroSection from "@/components/sections/HeroSection";
+import LatestSection from "@/components/sections/LatestSection";
 
 const mockJobs = [
   {
@@ -165,6 +167,8 @@ export default function Home() {
         <BrandsSection />
         <CategorySection />
         <CTASection />
+        <FeaturedSection />
+        <LatestSection />
       </main>
       <Footer />
     </>
