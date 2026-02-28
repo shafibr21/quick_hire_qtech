@@ -3,91 +3,13 @@ import Link from "next/link";
 import { JobList } from "../jobs/JobList";
 import { ArrowRight } from "lucide-react";
 import { JobCard } from "../jobs/JobCard";
+import { Job } from "@/lib/types";
 
-const mockJobs = [
-  {
-    id: "1",
-    title: "Email Marketing",
-    company: "Revolut",
-    location: "Madrid, Spain",
-    category: "Marketing, Design",
-    description:
-      "Revolut is looking for Email Marketing to help the team design and process.",
-    created_at: new Date().toISOString(),
-  },
-  {
-    id: "2",
-    title: "Brand Designer",
-    company: "Dropbox",
-    location: "San Francisco, US",
-    category: "Design, Business",
-    description:
-      "Dropbox is looking for Brand Designer to help the team design and process.",
-    created_at: new Date().toISOString(),
-  },
-  {
-    id: "3",
-    title: "Email Marketing",
-    company: "Pitch",
-    location: "Berlin, Germany",
-    category: "Marketing",
-    description:
-      "Pitch is looking for Email Marketing to help the team design and process.",
-    created_at: new Date().toISOString(),
-  },
-  {
-    id: "4",
-    title: "Visual Designer",
-    company: "Blinkist",
-    location: "Granada, Spain",
-    category: "Design",
-    description:
-      "Blinkist is looking for Visual Designer to help the team design and process.",
-    created_at: new Date().toISOString(),
-  },
-  {
-    id: "5",
-    title: "Product Designer",
-    company: "ClassPass",
-    location: "Manchester, UK",
-    category: "Marketing, Design",
-    description:
-      "ClassPass is looking for Product Designer to help the team design and process.",
-    created_at: new Date().toISOString(),
-  },
-  {
-    id: "6",
-    title: "Lead Designer",
-    company: "Canva",
-    location: "Ontario, Canada",
-    category: "Design, Business",
-    description:
-      "Canva is looking for Lead Designer to help the team design and process.",
-    created_at: new Date().toISOString(),
-  },
-  {
-    id: "7",
-    title: "Brand Strategist",
-    company: "GoDaddy",
-    location: "Marseille, France",
-    category: "Marketing",
-    description:
-      "GoDaddy is looking for Brand Strategist to help the team design and process.",
-    created_at: new Date().toISOString(),
-  },
-  {
-    id: "8",
-    title: "Data Analyst",
-    company: "Twitter",
-    location: "San Diego, US",
-    category: "Technology",
-    description:
-      "Twitter is looking for Data Analyst to help the team design and process.",
-    created_at: new Date().toISOString(),
-  },
-];
+interface FeaturedSectionProps {
+  jobs: Job[];
+}
 
-const FeaturedSection = () => {
+const FeaturedSection = ({ jobs }: FeaturedSectionProps) => {
   return (
     <section className="py-20 bg-white">
       <Container>
@@ -104,7 +26,7 @@ const FeaturedSection = () => {
         </div>
 
         <div className="flex gap-6 overflow-x-auto sm:hidden scrollbar-hide pb-4 -mx-4 px-4">
-          {mockJobs.map((job) => (
+          {jobs.map((job) => (
             <JobCard
               key={job.id}
               job={job}
@@ -114,7 +36,7 @@ const FeaturedSection = () => {
           ))}
         </div>
         <JobList columns={4} className="hidden sm:grid">
-          {mockJobs.map((job) => (
+          {jobs.map((job) => (
             <JobCard key={job.id} job={job} variant="vertical" />
           ))}
         </JobList>

@@ -4,83 +4,13 @@ import { JobList } from "../jobs/JobList";
 import Link from "next/link";
 import { JobCard } from "../jobs/JobCard";
 import Image from "next/image";
+import { Job } from "@/lib/types";
 
-const latestJobs = [
-  {
-    id: "9",
-    title: "Social Media Assistant",
-    company: "Nomad",
-    location: "Paris, France",
-    category: "Marketing, Design",
-    description: "We are looking for a Social Media Assistant.",
-    created_at: new Date().toISOString(),
-  },
-  {
-    id: "10",
-    title: "Social Media Assistant",
-    company: "Netlify",
-    location: "Paris, France",
-    category: "Marketing, Design",
-    description: "We are looking for a Social Media Assistant.",
-    created_at: new Date().toISOString(),
-  },
-  {
-    id: "11",
-    title: "Brand Designer",
-    company: "Dropbox",
-    location: "San Francisco, US",
-    category: "Design",
-    description: "We are looking for a Brand Designer.",
-    created_at: new Date().toISOString(),
-  },
-  {
-    id: "12",
-    title: "Brand Designer",
-    company: "Maze",
-    location: "San Francisco, US",
-    category: "Design",
-    description: "We are looking for a Brand Designer.",
-    created_at: new Date().toISOString(),
-  },
-  {
-    id: "13",
-    title: "Interactive Developer",
-    company: "Terraform",
-    location: "Hamburg, Germany",
-    category: "Technology, Design",
-    description: "We are looking for a Interactive Developer.",
-    created_at: new Date().toISOString(),
-  },
-  {
-    id: "14",
-    title: "Interactive Developer",
-    company: "Udacity",
-    location: "Hamburg, Germany",
-    category: "Technology, Design",
-    description: "We are looking for a Interactive Developer.",
-    created_at: new Date().toISOString(),
-  },
-  {
-    id: "15",
-    title: "HR Manager",
-    company: "Packer",
-    location: "Lucerne, Switzerland",
-    category: "Human Resource",
-    description: "We are looking for a HR Manager.",
-    created_at: new Date().toISOString(),
-  },
-  {
-    id: "16",
-    title: "HR Manager",
-    company: "Webflow",
-    location: "Lucerne, Switzerland",
-    category: "Human Resource",
-    description: "We are looking for a HR Manager.",
-    created_at: new Date().toISOString(),
-  },
-];
+interface LatestSectionProps {
+  jobs: Job[];
+}
 
-const LatestSection = () => {
+const LatestSection = ({ jobs }: LatestSectionProps) => {
   return (
     <section className="relative py-10 lg:py-20 bg-slate-50 overflow-hidden">
       {/* Background Pattern */}
@@ -106,7 +36,7 @@ const LatestSection = () => {
         </div>
 
         <JobList columns={2}>
-          {latestJobs.map((job) => (
+          {jobs.map((job) => (
             <JobCard key={job.id} job={job} variant="horizontal" />
           ))}
         </JobList>
