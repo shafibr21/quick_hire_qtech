@@ -8,6 +8,8 @@ import HeroSection from "@/components/sections/HeroSection";
 import LatestSection from "@/components/sections/LatestSection";
 import { getJobs } from "@/lib/api.server";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const allJobs = await getJobs();
 
