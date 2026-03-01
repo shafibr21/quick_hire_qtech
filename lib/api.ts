@@ -9,6 +9,7 @@ function transformJob(doc: any): Job {
     id: doc._id?.toString?.() || doc.id,
     title: doc.title,
     company: doc.company,
+    iconUrl: doc.iconUrl ?? undefined,
     location: doc.location,
     category: doc.category,
     salary: doc.salary || "",
@@ -28,11 +29,26 @@ export async function fetchJobs(): Promise<Job[]> {
 
 export async function createJob(
   jobData: Omit<Job, "id" | "created_at">,
+  iconFile?: File,
 ): Promise<Job> {
+  console.log(
+    "[createJob] iconFile:",
+    iconFile ? `${iconFile.name} (${iconFile.size} bytes)` : "undefined",
+  );
+  const formData = new FormData();
+  formData.append("title", jobData.title);
+  formData.append("company", jobData.company);
+  formData.append("location", jobData.location);
+  formData.append("category", jobData.category);
+  formData.append("salary", jobData.salary);
+  formData.append("description", jobData.description);
+  if (iconFile) {
+    formData.append("icon", iconFile);
+  }
+
   const res = await fetch("/api/jobs", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(jobData),
+    body: formData,
   });
   const data = await res.json();
   if (!data.success) throw new Error(data.message || "Failed to create job");

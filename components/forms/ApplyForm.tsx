@@ -68,10 +68,10 @@ export function ApplyForm({ jobId }: ApplyFormProps) {
         <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 mb-6">
           <CheckCircle2 size={32} />
         </div>
-        <h3 className="text-2xl font-bold text-slate-900 mb-2">
+        <h3 className="text-2xl font-bold text-slate-900 mb-2 font-epilogue">
           Application Sent!
         </h3>
-        <p className="text-slate-600 mb-8 max-w-sm">
+        <p className="text-slate-600 mb-8 max-w-sm font-epilogue">
           Thank you for applying. The employer will review your application and
           contact you directly.
         </p>
@@ -87,7 +87,7 @@ export function ApplyForm({ jobId }: ApplyFormProps) {
   }
 
   return (
-    <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+    <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm font-epilogue">
       <h3 className="text-xl font-bold text-slate-900 mb-6">
         Apply for this job
       </h3>
@@ -100,7 +100,7 @@ export function ApplyForm({ jobId }: ApplyFormProps) {
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-1.5">
+          <label className="block text-sm font-medium text-slate-700 mb-1.5 font-epilogue">
             Full Name
           </label>
           <Input
@@ -108,11 +108,12 @@ export function ApplyForm({ jobId }: ApplyFormProps) {
             placeholder="John Doe"
             icon={<User size={18} />}
             error={errors.name?.message}
+            className="text-black font-epilogue"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-1.5">
+          <label className="block text-sm font-medium text-slate-700 mb-1.5 font-epilogue">
             Email Address
           </label>
           <Input
@@ -121,11 +122,12 @@ export function ApplyForm({ jobId }: ApplyFormProps) {
             placeholder="john@example.com"
             icon={<Mail size={18} />}
             error={errors.email?.message}
+            className="text-black font-epilogue"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-1.5">
+          <label className="block text-sm font-medium text-slate-700 mb-1.5 font-epilogue">
             Resume / Portfolio URL
           </label>
           <Input
@@ -134,11 +136,12 @@ export function ApplyForm({ jobId }: ApplyFormProps) {
             placeholder="https://your-portfolio.com"
             icon={<LinkIcon size={18} />}
             error={errors.resume_link?.message}
+            className="text-black font-epilogue"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-1.5">
+          <label className="block text-sm font-medium text-slate-700 mb-1.5 font-epilogue">
             Cover Note
           </label>
           <div className="relative">
@@ -148,7 +151,7 @@ export function ApplyForm({ jobId }: ApplyFormProps) {
             <Textarea
               {...register("cover_note")}
               placeholder="Why are you a great fit for this role?"
-              className="pl-10"
+              className="pl-10 text-black font-epilogue"
               error={errors.cover_note?.message}
             />
           </div>
@@ -158,7 +161,7 @@ export function ApplyForm({ jobId }: ApplyFormProps) {
           type="submit"
           variant="primary"
           size="lg"
-          className="w-full mt-2"
+          className="w-full mt-2 font-epilogue"
           isLoading={isSubmitting}
         >
           Submit Application

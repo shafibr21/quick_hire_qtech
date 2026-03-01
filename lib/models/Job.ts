@@ -3,6 +3,7 @@ import mongoose, { Schema, Document, Model } from "mongoose";
 export interface IJob extends Document {
   title: string;
   company: string;
+  iconUrl?: string; // Optional field for company logo/icon
   location: string;
   category: string;
   salary: string;
@@ -36,6 +37,10 @@ const JobSchema: Schema<IJob> = new Schema(
     description: {
       type: String,
       required: [true, "Description is required"],
+    },
+    iconUrl: {
+      type: String,
+      default: null,
     },
   },
   {

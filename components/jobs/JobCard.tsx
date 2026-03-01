@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Job } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { Building2 } from "lucide-react";
@@ -43,8 +44,18 @@ export function JobCard({
         )}
       >
         <div className="flex justify-between items-start mb-6">
-          <div className="h-12 w-12 flex items-center justify-center text-slate-500">
-            <Building2 className="w-6 h-6" />
+          <div className="h-12 w-12 flex items-center justify-center text-slate-500 rounded-md overflow-hidden">
+            {job.iconUrl ? (
+              <Image
+                src={job.iconUrl}
+                alt={`${job.company} logo`}
+                width={48}
+                height={48}
+                className="object-contain"
+              />
+            ) : (
+              <Building2 className="w-6 h-6" />
+            )}
           </div>
           <span className="px-3 py-1 font-epilogue text-xs font-semibold text-blue-600 border border-blue-400">
             Full Time
@@ -87,8 +98,18 @@ export function JobCard({
         className,
       )}
     >
-      <div className="h-14 w-14 flex items-center justify-center text-slate-500 shrink-0">
-        <Building2 className="w-7 h-7" />
+      <div className="h-14 w-14 flex items-center justify-center text-slate-500 shrink-0 rounded-md overflow-hidden">
+        {job.iconUrl ? (
+          <Image
+            src={job.iconUrl}
+            alt={`${job.company} logo`}
+            width={56}
+            height={56}
+            className="object-contain"
+          />
+        ) : (
+          <Building2 className="w-7 h-7" />
+        )}
       </div>
 
       <div className="grow">
