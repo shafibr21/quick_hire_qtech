@@ -31,4 +31,5 @@ export const jobSchema = z.object({
       error: "Description is required",
     })
     .min(10, "Description must be at least 10 characters long"),
+  iconUrl: z.string().url().optional(),
 });

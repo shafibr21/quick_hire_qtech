@@ -37,8 +37,8 @@ export function AdminJobTable({
   return (
     <div className="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
       <div className="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
-        <h3 className="text-xl font-bold text-slate-900">Manage Jobs</h3>
-        <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">
+        <h3 className="text-xl font-bold text-slate-900 font-epilogue">Manage Jobs</h3>
+        <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full font-epilogue">
           {jobs.length} total
         </span>
       </div>
@@ -49,31 +49,31 @@ export function AdminJobTable({
             <tr>
               <th
                 scope="col"
-                className="px-6 py-4 font-semibold text-slate-900"
+                className="px-6 py-4 font-semibold text-slate-900 font-epilogue"
               >
                 Job Title
               </th>
               <th
                 scope="col"
-                className="px-6 py-4 font-semibold text-slate-900"
+                className="px-6 py-4 font-semibold text-slate-900 font-epilogue"
               >
                 Company
               </th>
               <th
                 scope="col"
-                className="px-6 py-4 font-semibold text-slate-900"
+                className="px-6 py-4 font-semibold text-slate-900 font-epilogue"
               >
                 Category
               </th>
               <th
                 scope="col"
-                className="px-6 py-4 font-semibold text-slate-900"
+                className="px-6 py-4 font-semibold text-slate-900 font-epilogue"
               >
                 Date Posted
               </th>
               <th
                 scope="col"
-                className="px-6 py-4 font-semibold text-slate-900 text-right"
+                className="px-6 py-4 font-semibold text-slate-900 text-right font-epilogue"
               >
                 Actions
               </th>
@@ -106,13 +106,13 @@ export function AdminJobTable({
               jobs.map((job) => (
                 <tr
                   key={job.id}
-                  className="hover:bg-slate-50/80 transition-colors"
+                  className="hover:bg-slate-50/80 transition-colors font-epilogue"
                 >
-                  <td className="px-6 py-4 font-medium text-slate-900">
+                  <td className="px-6 py-4 font-medium text-slate-900 font-epilogue">
                     {job.title}
                   </td>
-                  <td className="px-6 py-4">{job.company}</td>
-                  <td className="px-6 py-4">
+                  <td className="px-6 py-4 font-epilogue">{job.company}</td>
+                  <td className="px-6 py-4 font-epilogue">
                     <span className="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-full whitespace-nowrap">
                       {job.category}
                     </span>

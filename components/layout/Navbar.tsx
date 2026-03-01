@@ -23,10 +23,10 @@ export function Navbar() {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
-            <Link href="/" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors font-expilogue">
+            <Link href="/" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors font-epilogue">
               Find Jobs
             </Link>
-            <Link href="#" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors font-expilogue">
+            <Link href="#" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors font-epilogue">
                Browse Companies
             </Link>
           </nav>

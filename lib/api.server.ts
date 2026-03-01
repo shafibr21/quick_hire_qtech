@@ -11,6 +11,7 @@ function transformJob(doc: any): Job {
     id: doc._id?.toString?.() || doc.id,
     title: doc.title,
     company: doc.company,
+    iconUrl: doc.iconUrl ?? undefined,
     location: doc.location,
     category: doc.category,
     salary: doc.salary || "",

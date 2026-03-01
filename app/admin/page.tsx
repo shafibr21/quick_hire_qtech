@@ -35,10 +35,10 @@ export default function AdminPage() {
       <main className="flex-1 pt-24 pb-20">
         <Container>
           <div className="mb-10 text-center md:text-left">
-            <h1 className="text-3xl font-bold text-slate-900 tracking-tight mb-3">
+            <h1 className="text-3xl font-bold text-slate-900 tracking-tight mb-3 font-epilogue">
               Admin Dashboard
             </h1>
-            <p className="text-slate-600">
+            <p className="text-slate-600 font-epilogue">
               Manage your job postings and applications in one place.
             </p>
           </div>
